@@ -77,4 +77,9 @@ class corrugatedButton: UIButton {
             self.isUserInteractionEnabled = true
         }
     }
+    
+    deinit {
+        self.timer?.invalidate()
+        self.timer = nil
+    }
 }

@@ -10,30 +10,41 @@ import UIKit
 
 class CAReplicatorViewController: UIViewController {
 
+    var section = 0
+    var row = 0
+    
     var replicatorLayer : CAReplicatorLayer = CAReplicatorLayer()
     var iv_earch : UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-//        let backgroundImg = UIImageView.init(frame: CGRect(x: 0, y: 0, width: ScreenW, height: ScreenH))
-//        self.view.addSubview(backgroundImg)
-//        backgroundImg.image = UIImage(named: "背景图")
-//
-//        iv_earch = UIImageView(frame: CGRect(x: (ScreenW - 50) / 2 + 150, y: (ScreenH - 50) / 2, width: 50, height: 50))
-//        iv_earch?.image = UIImage(named: "ico_home_active")
-//        let iv_sun = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-//        iv_sun.center = self.view.center
-//        iv_sun.image = UIImage(named: "tabBar_publish_icon")
-//        replicatorLayer.addSublayer(iv_earch!.layer)
-//        replicatorLayer.addSublayer(iv_sun.layer)
-        self.jumpAnimation()
+        if row == 0 {
+            
+            let backgroundImg = UIImageView.init(frame: CGRect(x: 0, y: 0, width: ScreenW, height: ScreenH))
+            self.view.addSubview(backgroundImg)
+            backgroundImg.image = UIImage(named: "背景图")
+            
+            iv_earch = UIImageView(frame: CGRect(x: (ScreenW - 50) / 2 + 150, y: (ScreenH - 50) / 2, width: 50, height: 50))
+            iv_earch?.image = UIImage(named: "ico_home_active")
+            let iv_sun = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            iv_sun.center = self.view.center
+            iv_sun.image = UIImage(named: "tabBar_publish_icon")
+            replicatorLayer.addSublayer(iv_earch!.layer)
+            replicatorLayer.addSublayer(iv_sun.layer)
+
+            
+            animation()
+
+        }else{
+            self.jumpAnimation()
+
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        animation()
         
     }
     // 恒星旋转动画

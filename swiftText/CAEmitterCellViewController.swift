@@ -86,6 +86,8 @@ class CAEmitterCellViewController: UIViewController {
      emissionLatitude：发射的z轴方向的发射角度。
      
     */
+    
+    var row = 0
 
     let PNGreen : UIColor = UIColor(red: 77.0 / 255.0, green: 186.0 / 255.0, blue: 122.0 / 255.00, alpha: 1.0)
 
@@ -99,13 +101,17 @@ class CAEmitterCellViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         
-        
-//        self.nenoLightAnimation()
-//        self.gradientAnimation()
-//        moreColorAnimation()
-//        bezierPath()
-        
-        self.lineChartAnimation()
+        if row == 0 {
+            self.nenoLightAnimation()
+        }else if row == 1 {
+            self.gradientAnimation()
+        }else if row == 2 {
+            moreColorAnimation()
+        }else if row == 3 {
+            bezierPath()
+        }else{
+            self.lineChartAnimation()
+        }
         
     }
     

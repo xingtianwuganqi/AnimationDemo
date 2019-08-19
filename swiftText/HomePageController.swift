@@ -16,9 +16,12 @@ import ImageIO
 import MobileCoreServices
 
 
-class HomePageController: UIViewController,View {
+class HomePageController: UIViewController {
     
-    typealias Reactor = HomePageReactor
+    var section: Int = 0
+    var row: Int = 0
+    
+//    typealias Reactor = HomePageReactor
     var disposeBag = DisposeBag()
 
 //    let loginBtn = UIButton(type: .custom).then { (button) in
@@ -54,14 +57,13 @@ class HomePageController: UIViewController,View {
         view.backgroundColor = UIColor.cyan
     }
     
-    init(reactor: HomePageReactor) {
-        super.init(nibName: nil, bundle: nil)
-        self.reactor = reactor
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    init() {
+//
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
         
     override func viewDidLoad() {
@@ -79,9 +81,70 @@ class HomePageController: UIViewController,View {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            self.loginBtnAnimation()
-//            self.transFormAnimation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { //[weak self] in
+            switch self.section {
+            case 0:
+                switch self.row {
+                case 0:
+                    self.loginBtnAnimation()
+                case 1:
+                    self.transFormAnimation()
+                case 2:
+                    self.planeAnimation()
+                case 3:
+                    self.keyTransFromAnimation()
+                case 4:
+                    self.buildTimer()
+                case 5:
+                    self.buildCADisplayLink()
+                case 6:
+                    self.drawAnimation()
+                case 7:
+                    self.decompositionGifImage()
+
+                case 8:
+                    self.createGifImage()
+                default:
+                    return
+                }
+            case 1:
+                switch self.row {
+                case 0:
+                    self.buttonLayerAnimation()
+                case 1:
+                    self.buttonLayerTransformAnimation()
+                case 2:
+                    self.buttonLayerRotationAnimation()
+                case 3:
+                    self.buttonLayerTranslationAnimation()
+                case 4:
+                    self.buttonLayerCornerRadiusAnimation()
+                case 5:
+                    self.buttonLayerBorderWidthAnimation()
+                case 6:
+                    self.buttonLayerBackgrandColorAnimation()
+                case 7:
+                    self.buttonLayerBorderColorAnimation()
+                case 8:
+                    self.buttonLayerOpacityAnimation()
+                case 9:
+                    self.buttonLayerShadowOffsetAnimation()
+                case 10:
+                    self.buttonKeyFrameAnimation()
+                case 11:
+                    self.buttonKeyFramePositionAnimation()
+                case 12:
+                    self.buttonAnimationGroup()
+                default:
+                    
+                    return
+                }
+            default:
+                return
+            }
+            
+//
+//
 //            self.planeAnimation()
 //            self.keyTransFromAnimation()
 //            self.buildTimer()
@@ -123,15 +186,43 @@ class HomePageController: UIViewController,View {
     
     // 旋转动画
     func transFormAnimation() {
-        UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(0.5)
-        let angleStart : CGFloat = CGFloat(Double.pi / 2)
-        index += 1
-        let angle = CGFloat(index) * angleStart
-        print(angle)
-        UIView.setAnimationDelegate(self)
-        loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
-        UIView.commitAnimations()
+        /*
+ 
+         UIView.setAnimationDelegate(self) //
+         在代理方法中，动画完成后flag并不会变成true，说明动画没有执行完，又重复调用self.transFormAnimation()，会导致内存泄漏
+         
+         func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+         print("animation stop")
+         
+         //        if flag {
+         //             self.transFormAnimation()
+         //        }
+            self.transFormAnimation() //lag并不会变成true，说明动画没有执行完，又重复调用self.transFormAnimation()，会导致内存泄漏
+         }
+ 
+         */
+        
+//        UIView.beginAnimations(nil, context: nil)
+//        UIView.setAnimationDuration(0.5)
+//        let angleStart : CGFloat = CGFloat(Double.pi / 2)
+//        index += 1
+//        let angle = CGFloat(index) * angleStart
+//        print(angle)
+//        UIView.setAnimationDelegate(self) // 代理是给layer层的动画，这里开始动画后layer层动画不会停止，会导致内存泄漏
+//        loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
+//        UIView.commitAnimations()
+        
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+            let angleStart : CGFloat = CGFloat(Double.pi / 2)
+            self?.index += 1
+            let angle = CGFloat(self?.index ?? 0) * angleStart
+            print(angle)
+            self?.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
+        }) { [weak self](finish) in
+            if finish {
+                self?.transFormAnimation()
+            }
+        }
     }
     
     // 关键帧动画
@@ -163,35 +254,38 @@ class HomePageController: UIViewController,View {
     // 关键帧实现抽奖大转盘
     
     func keyTransFromAnimation() {
-        UIView.animateKeyframes(withDuration: 1.2, delay: 0, options: UIView.KeyframeAnimationOptions.calculationModeCubic, animations: {
+        UIView.animateKeyframes(withDuration: 1.2, delay: 0, options: UIView.KeyframeAnimationOptions.calculationModeCubic, animations: { [weak self] in
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3, animations: {
-                self.index += 1
+                self?.index += 1
                 let angleStart : CGFloat = CGFloat(Double.pi / 2)
-                let angle = CGFloat(self.index) * angleStart
-                self.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
+                let angle = CGFloat(self?.index ?? 0) * angleStart
+                self?.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle) // 在UIView的black中执行CGAffineTransform动画时self,要用weak修饰，修改frame时，self不用weak修饰不会造成内存泄漏
             })
             
             UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.3, animations: {
-                self.index += 1
+                self?.index += 1
                 let angleStart : CGFloat = CGFloat(Double.pi / 2)
-                let angle = CGFloat(self.index) * angleStart
-                self.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
+                let angle = CGFloat(self?.index ?? 0) * angleStart
+                self?.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
             })
             UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.3, animations: {
-                self.index += 1
+                self?.index += 1
                 let angleStart : CGFloat = CGFloat(Double.pi / 2)
-                let angle = CGFloat(self.index) * angleStart
-                self.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
+                let angle = CGFloat(self?.index ?? 0) * angleStart
+                self?.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
             })
             UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.3, animations: {
-                self.index += 1
+                self?.index += 1
                 let angleStart : CGFloat = CGFloat(Double.pi / 2)
-                let angle = CGFloat(self.index) * angleStart
-                self.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
+                let angle = CGFloat(self?.index ?? 0) * angleStart
+                self?.loginBtn.transform = CGAffineTransform.init(rotationAngle: angle)
             })
         }) { (finish) in
-            print("finish")
-            self.keyTransFromAnimation()
+            if finish {
+                print("finish")
+
+                self.keyTransFromAnimation()
+            }
         }
     }
     // 逐帧动画实现（定时器，CADisplayLink，Draw）
@@ -538,16 +632,20 @@ class HomePageController: UIViewController,View {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
-extension HomePageController {
-    func bind(reactor: HomePageReactor) {
-        
-        
+    
+    deinit {
+        self.loginBtn.layer.removeAllAnimations()
     }
+    
 }
+
 extension HomePageController : CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         print("animation stop")
-        self.transFormAnimation()
+        // 需要在动画完成后再执行，不然会引起内存泄漏
+        if flag {
+            self.transFormAnimation()
+        }
+//        self.transFormAnimation()
     }
 }
