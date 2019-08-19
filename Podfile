@@ -9,7 +9,6 @@ pod 'RxCocoa'
 pod 'Then'
 pod 'ReactorKit'
 pod 'RxDataSources' 
-pod 'LLCycleScrollView'
 pod 'RxViewController'
 pod 'ReusableKit/RxSwift'
 end
