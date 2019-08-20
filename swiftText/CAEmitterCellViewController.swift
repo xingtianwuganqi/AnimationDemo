@@ -96,18 +96,21 @@ class CAEmitterCellViewController: UIViewController {
     
     var lineChartView : LineChartView?
     var barChartView : BarChartView?
+    var timer : Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         
         if row == 0 {
-            self.nenoLightAnimation()
+            fireAnimation()
         }else if row == 1 {
-            self.gradientAnimation()
+            self.nenoLightAnimation()
         }else if row == 2 {
-            moreColorAnimation()
+            self.gradientAnimation()
         }else if row == 3 {
+            moreColorAnimation()
+        }else if row == 4 {
             bezierPath()
         }else{
             self.lineChartAnimation()
@@ -252,7 +255,6 @@ class CAEmitterCellViewController: UIViewController {
     func moreColorAnimation() {
         setColorArr()
         setUI()
-        
     }
     
     func setColorArr()  {
@@ -300,7 +302,7 @@ class CAEmitterCellViewController: UIViewController {
             layerArray.append(gradientLayer)
         }
         
-        Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(colorChange), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(colorChange), userInfo: nil, repeats: true)
     }
 
     @objc func colorChange() {
@@ -328,5 +330,14 @@ class CAEmitterCellViewController: UIViewController {
         view.addSubview(bezier)
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+  
+        super.viewWillDisappear(animated)
+        self.timer?.invalidate()
+        self.timer = nil
+    }
+    
+    deinit {
+        print("CAEmitter    Deinit")
+    }
 }
