@@ -98,6 +98,8 @@ class CAEmitterCellViewController: UIViewController {
     var barChartView : BarChartView?
     var timer : Timer?
 
+    let arcView = RoundView.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -112,6 +114,8 @@ class CAEmitterCellViewController: UIViewController {
             moreColorAnimation()
         }else if row == 4 {
             bezierPath()
+        }else if row == 5{
+            bezierPathRound()
         }else{
             self.lineChartAnimation()
         }
@@ -328,6 +332,22 @@ class CAEmitterCellViewController: UIViewController {
     func bezierPath() {
         let bezier = BezierPathView.init(frame: view.bounds)
         view.addSubview(bezier)
+    }
+    
+    func bezierPathRound() {
+        let button = UIButton(type: .custom)
+
+        view.addSubview(arcView)
+        view.addSubview(button)
+        
+        button.setTitle("按钮", for: .normal)
+        button.backgroundColor = .blue
+        button.frame = CGRect(x: 200, y: 300, width: 50, height: 30)
+        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+    }
+    
+    @objc func buttonClick() {
+        arcView.drawLineChart(num: 1)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
