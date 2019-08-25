@@ -75,7 +75,7 @@ class HomePageController: UIViewController {
         view.addSubview(likeImageView)
         view.addSubview(plane)
         
-//        view.addSubview(blackHole)
+
         self.buttonCorrugatedAnimation()
     }
     
@@ -98,6 +98,7 @@ class HomePageController: UIViewController {
                 case 5:
                     self.buildCADisplayLink()
                 case 6:
+                    self.view.addSubview(self.blackHole)
                     self.drawAnimation()
                 case 7:
                     self.decompositionGifImage()
