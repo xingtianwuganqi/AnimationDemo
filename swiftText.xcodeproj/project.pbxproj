@@ -33,6 +33,8 @@
 		C4C4B5A51FFBDF6E00399DB1 /* commont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4B5A41FFBDF6E00399DB1 /* commont.swift */; };
 		C4F3F71B225B8AD7001CE26D /* plane.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4F3F71A225B8AD7001CE26D /* plane.gif */; };
 		C4F3F71D225B8D48001CE26D /* banner3.png in Resources */ = {isa = PBXBuildFile; fileRef = C4F3F71C225B8D48001CE26D /* banner3.png */; };
+		D3128372230BA2BB0015EE94 /* CATransform3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3128371230BA2BB0015EE94 /* CATransform3DViewController.swift */; };
+		D32659BE230D48DB005EC125 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32659BC230D48DB005EC125 /* RoundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		C4C4B5A41FFBDF6E00399DB1 /* commont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commont.swift; sourceTree = "<group>"; };
 		C4F3F71A225B8AD7001CE26D /* plane.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plane.gif; sourceTree = "<group>"; };
 		C4F3F71C225B8D48001CE26D /* banner3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner3.png; sourceTree = "<group>"; };
+		D3128371230BA2BB0015EE94 /* CATransform3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransform3DViewController.swift; sourceTree = "<group>"; };
+		D32659BC230D48DB005EC125 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		FCF3F2CDBD897392154221E1 /* Pods-swiftText.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftText.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftText/Pods-swiftText.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,8 @@
 				C4A1C0AF2134EFB900714601 /* ListViewController.swift */,
 				C4A1C0B12134EFE000714601 /* UserInfoController.swift */,
 				C4B2A4E9226D9FEF00EF885C /* CAEmitterCellViewController.swift */,
+				D3128371230BA2BB0015EE94 /* CATransform3DViewController.swift */,
+				D32659BC230D48DB005EC125 /* RoundView.swift */,
 				C4709E342254BB1000C5E872 /* BlackHoleView.swift */,
 				C4B2A4E12267296800EF885C /* corrugatedButton.swift */,
 				C4B2A4E52268576900EF885C /* ButtonView.swift */,
@@ -340,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A1C0B22134EFE000714601 /* UserInfoController.swift in Sources */,
+				D32659BE230D48DB005EC125 /* RoundView.swift in Sources */,
 				C4B2A4E22267296800EF885C /* corrugatedButton.swift in Sources */,
 				C4B2A4E62268576900EF885C /* ButtonView.swift in Sources */,
 				C40F67C61FC71C75004A7868 /* ViewController.swift in Sources */,
@@ -358,6 +365,7 @@
 				C4B2A4EC227060DD00EF885C /* BezierPathView.swift in Sources */,
 				C4A1C0AE2134EFA600714601 /* HomePageController.swift in Sources */,
 				C40F67C41FC71C75004A7868 /* AppDelegate.swift in Sources */,
+				D3128372230BA2BB0015EE94 /* CATransform3DViewController.swift in Sources */,
 				C4276D3820F5B422002DB196 /* YUNNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

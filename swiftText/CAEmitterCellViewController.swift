@@ -96,19 +96,26 @@ class CAEmitterCellViewController: UIViewController {
     
     var lineChartView : LineChartView?
     var barChartView : BarChartView?
+    var timer : Timer?
 
+    let arcView = RoundView.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         
         if row == 0 {
-            self.nenoLightAnimation()
+            fireAnimation()
         }else if row == 1 {
-            self.gradientAnimation()
+            self.nenoLightAnimation()
         }else if row == 2 {
-            moreColorAnimation()
+            self.gradientAnimation()
         }else if row == 3 {
+            moreColorAnimation()
+        }else if row == 4 {
             bezierPath()
+        }else if row == 5{
+            bezierPathRound()
         }else{
             self.lineChartAnimation()
         }
@@ -252,7 +259,6 @@ class CAEmitterCellViewController: UIViewController {
     func moreColorAnimation() {
         setColorArr()
         setUI()
-        
     }
     
     func setColorArr()  {
@@ -300,7 +306,7 @@ class CAEmitterCellViewController: UIViewController {
             layerArray.append(gradientLayer)
         }
         
-        Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(colorChange), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(colorChange), userInfo: nil, repeats: true)
     }
 
     @objc func colorChange() {
@@ -328,5 +334,30 @@ class CAEmitterCellViewController: UIViewController {
         view.addSubview(bezier)
     }
     
+    func bezierPathRound() {
+        let button = UIButton(type: .custom)
 
+        view.addSubview(arcView)
+        view.addSubview(button)
+        
+        button.setTitle("按钮", for: .normal)
+        button.backgroundColor = .blue
+        button.frame = CGRect(x: 200, y: 300, width: 50, height: 30)
+        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+    }
+    
+    @objc func buttonClick() {
+        arcView.drawLineChart(num: 1)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+  
+        super.viewWillDisappear(animated)
+        self.timer?.invalidate()
+        self.timer = nil
+    }
+    
+    deinit {
+        print("CAEmitter    Deinit")
+    }
 }
