@@ -10,4 +10,6 @@
 #define Header_h
 
 //#import <SDWebImage/UIImageView+WebCache.h>
+#import <mobileffmpeg/MobileFFmpeg.h>
+
 #endif /* Header_h */

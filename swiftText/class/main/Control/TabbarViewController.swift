@@ -30,12 +30,6 @@ class TabbarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addChildViewControl(control: HomePageController.init(), titleText: "首页", image: "tabbar_home", selectImg: "tabbar_home_highlighted")
-        self.addChildViewControl(control: ListViewController.init(), titleText: "图表", image: "tabbar_message_center", selectImg: "tabbar_message_center_highlighted")
-        self.addChildViewControl(control: UserInfoController.init(), titleText: "个人中心", image: "tabbar_profile", selectImg: "tabbar_profile_highlighted")
-        
-        self.addChildViewControl(control: CAEmitterCellViewController.init(), titleText: "动画", image: "tabbar_profile", selectImg: "tabbar_profile_highlighted")
-        
         self.tabBar.backgroundColor = UIColor.white
         
     }
