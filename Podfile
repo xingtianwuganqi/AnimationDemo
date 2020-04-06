@@ -1,4 +1,4 @@
-platform :ios, ‘10.0’
+platform :ios, ‘9.0’
 
 use_frameworks!
 target “swiftText” do
@@ -11,8 +11,6 @@ pod 'ReactorKit'
 pod 'RxDataSources' 
 pod 'RxViewController'
 pod 'ReusableKit/RxSwift'
-pod 'mobile-ffmpeg-full', '4.2.LTS'
-
 end
 
 
