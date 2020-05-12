@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0441FEA4E5D58754E76903904575679E"
-               BuildableName = "LLCycleScrollView.framework"
-               BlueprintName = "LLCycleScrollView"
+               BlueprintIdentifier = "4622BFEF3DC16E8BD15EEFC30D4D0084"
+               BuildableName = "RxRelay.framework"
+               BlueprintName = "RxRelay"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

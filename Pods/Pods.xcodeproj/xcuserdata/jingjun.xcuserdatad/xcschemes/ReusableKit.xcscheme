@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CB51454CAC212EA9BE5A272567C1B97"
+               BlueprintIdentifier = "4A17002B2C41F11602E278CE2771F27E"
                BuildableName = "ReusableKit.framework"
                BlueprintName = "ReusableKit"
                ReferencedContainer = "container:Pods.xcodeproj">

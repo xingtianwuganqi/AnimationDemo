@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     var tabelview:UITableView!
     
-    var listArr = [ ["缩放动画","旋转动画","关键帧动画","关键帧实现抽奖大转盘","逐帧动画实现（定时器，CADisplayLink，Draw）","基于CADisplayLink 逐帧动画","基于draw 方法 逐帧动画","gif 动画的分解","gif 动画的合成"],["位置动画","缩放动画","旋转动画","位移动画","圆角动画","边框动画","颜色渐变","边框颜色渐变","淡入淡出动画","阴影渐变动画","CAKeyframeAnimation  淡入淡出动画","任意路径动画","动画组合","按钮波纹动画","登录按钮动画效果"],["粒子鬼火动画","粒子霓虹灯动画","光波扫描效果","音响音量跳动效果","贝赛尔曲线","贝塞尔圆形指示器","动态折线图与动态柱状图"],["恒星旋转动画","音量跳动动画效果"]]
+    var listArr = [ ["缩放动画","旋转动画","关键帧动画","关键帧实现抽奖大转盘","逐帧动画实现（定时器，CADisplayLink，Draw）","基于CADisplayLink 逐帧动画","基于draw 方法 逐帧动画","gif 动画的分解","gif 动画的合成","添加购物车动画"],["位置动画","缩放动画","旋转动画","位移动画","圆角动画","边框动画","颜色渐变","边框颜色渐变","淡入淡出动画","阴影渐变动画","CAKeyframeAnimation  淡入淡出动画","任意路径动画","动画组合","按钮波纹动画","登录按钮动画效果"],["粒子鬼火动画","粒子霓虹灯动画","光波扫描效果","音响音量跳动效果","贝赛尔曲线","贝塞尔圆形指示器","动态折线图与动态柱状图"],["恒星旋转动画","音量跳动动画效果"]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,11 +91,17 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let homepage = HomePageController()
-            homepage.section = indexPath.section
-            homepage.row  = indexPath.row
-            homepage.title = listArr[indexPath.section][indexPath.row]
-            self.navigationController?.pushViewController(homepage, animated: true)
+            if indexPath.row == 9 {
+                let control = AddShopCartController.init()
+                self.navigationController?.pushViewController(control, animated: true)
+            }else{
+                
+                let homepage = HomePageController()
+                homepage.section = indexPath.section
+                homepage.row  = indexPath.row
+                homepage.title = listArr[indexPath.section][indexPath.row]
+                self.navigationController?.pushViewController(homepage, animated: true)
+            }
         case 1:
             switch indexPath.row {
             case 14:

@@ -31,6 +31,9 @@
 		C4B2A4EE2271882500EF885C /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2A4ED2271882500EF885C /* LineChartView.swift */; };
 		C4B2A4F022719C3E00EF885C /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2A4EF22719C3E00EF885C /* BarChartView.swift */; };
 		C4C4B5A51FFBDF6E00399DB1 /* commont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4B5A41FFBDF6E00399DB1 /* commont.swift */; };
+		C4E053F1246A3FC000DF5DC9 /* AddShopCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E053F0246A3FC000DF5DC9 /* AddShopCartController.swift */; };
+		C4E053F4246A40FC00DF5DC9 /* AddShopCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E053F2246A40FC00DF5DC9 /* AddShopCartCell.swift */; };
+		C4E053F5246A40FC00DF5DC9 /* AddShopCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E053F3246A40FC00DF5DC9 /* AddShopCartCell.xib */; };
 		C4F3F71B225B8AD7001CE26D /* plane.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4F3F71A225B8AD7001CE26D /* plane.gif */; };
 		C4F3F71D225B8D48001CE26D /* banner3.png in Resources */ = {isa = PBXBuildFile; fileRef = C4F3F71C225B8D48001CE26D /* banner3.png */; };
 		D3128372230BA2BB0015EE94 /* CATransform3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3128371230BA2BB0015EE94 /* CATransform3DViewController.swift */; };
@@ -66,6 +69,9 @@
 		C4B2A4EF22719C3E00EF885C /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		C4C4B5A01FFA36AF00399DB1 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		C4C4B5A41FFBDF6E00399DB1 /* commont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commont.swift; sourceTree = "<group>"; };
+		C4E053F0246A3FC000DF5DC9 /* AddShopCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShopCartController.swift; sourceTree = "<group>"; };
+		C4E053F2246A40FC00DF5DC9 /* AddShopCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShopCartCell.swift; sourceTree = "<group>"; };
+		C4E053F3246A40FC00DF5DC9 /* AddShopCartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddShopCartCell.xib; sourceTree = "<group>"; };
 		C4F3F71A225B8AD7001CE26D /* plane.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plane.gif; sourceTree = "<group>"; };
 		C4F3F71C225B8D48001CE26D /* banner3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner3.png; sourceTree = "<group>"; };
 		D3128371230BA2BB0015EE94 /* CATransform3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransform3DViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,9 @@
 				C4B2A4EB227060DD00EF885C /* BezierPathView.swift */,
 				C4B2A4ED2271882500EF885C /* LineChartView.swift */,
 				C4B2A4EF22719C3E00EF885C /* BarChartView.swift */,
+				C4E053F0246A3FC000DF5DC9 /* AddShopCartController.swift */,
+				C4E053F2246A40FC00DF5DC9 /* AddShopCartCell.swift */,
+				C4E053F3246A40FC00DF5DC9 /* AddShopCartCell.xib */,
 				C4C4B5A01FFA36AF00399DB1 /* Header.h */,
 				C4F3F71C225B8D48001CE26D /* banner3.png */,
 				C4F3F71A225B8AD7001CE26D /* plane.gif */,
@@ -278,6 +287,7 @@
 				C40F67CE1FC71C75004A7868 /* Assets.xcassets in Resources */,
 				C40F67C91FC71C75004A7868 /* Main.storyboard in Resources */,
 				C4F3F71D225B8D48001CE26D /* banner3.png in Resources */,
+				C4E053F5246A40FC00DF5DC9 /* AddShopCartCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +363,7 @@
 				C40F67CC1FC71C75004A7868 /* swiftText.xcdatamodeld in Sources */,
 				C4A1C0B42134F2DB00714601 /* Tool.swift in Sources */,
 				C40F67F91FCC4FA5004A7868 /* tabBarButton.swift in Sources */,
+				C4E053F1246A3FC000DF5DC9 /* AddShopCartController.swift in Sources */,
 				C4B2A4F022719C3E00EF885C /* BarChartView.swift in Sources */,
 				C4C4B5A51FFBDF6E00399DB1 /* commont.swift in Sources */,
 				C4B2A4E822686ED600EF885C /* CircleView.swift in Sources */,
@@ -365,6 +376,7 @@
 				C4B2A4EC227060DD00EF885C /* BezierPathView.swift in Sources */,
 				C4A1C0AE2134EFA600714601 /* HomePageController.swift in Sources */,
 				C40F67C41FC71C75004A7868 /* AppDelegate.swift in Sources */,
+				C4E053F4246A40FC00DF5DC9 /* AddShopCartCell.swift in Sources */,
 				D3128372230BA2BB0015EE94 /* CATransform3DViewController.swift in Sources */,
 				C4276D3820F5B422002DB196 /* YUNNavigationController.swift in Sources */,
 			);
@@ -512,7 +524,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/swiftText/Header.h";
 				INFOPLIST_FILE = swiftText/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jingjun.swiftText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.720yun.AMapDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swiftText/Header.h";
@@ -532,7 +544,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/swiftText/Header.h";
 				INFOPLIST_FILE = swiftText/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jingjun.swiftText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.720yun.AMapDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swiftText/Header.h";
